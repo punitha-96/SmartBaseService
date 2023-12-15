@@ -10,4 +10,5 @@ CREATE TABLE userSchema (
     profile_image_url VARCHAR(255), 
     role_of_person VARCHAR(10) CHECK (role_of_person IN ('user', 'admin')) DEFAULT 'user',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    
 );
