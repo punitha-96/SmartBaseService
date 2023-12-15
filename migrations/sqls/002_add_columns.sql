@@ -1,0 +1,4 @@
+-- 002_add_columns.sql
+ALTER TABLE example
+ADD COLUMN description TEXT,
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
