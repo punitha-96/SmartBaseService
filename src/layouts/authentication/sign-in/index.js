@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { GoogleLogin } from "react-google-login";
+import { GoogleLogin, GoogleLogout } from "react-google-login";
 import { gapi } from "gapi-script";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+import backgroundImage from "assets/images/logos/sbbackground.avif";
 
 const clientId = "696129603757-olgq89jjas7bl0fsrgdg4hvlfkahvrfe.apps.googleusercontent.com";
 
 function Basic() {
   const [googleApiInitialized, setGoogleApiInitialized] = useState(false);
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Dynamically load the gapi script
     const script = document.createElement("script");
     script.src = "https://apis.google.com/js/api.js";
     script.async = true;
 
     script.onload = () => {
-      // Handle script loaded, e.g., initialize gapi
       gapi.load("client:auth2", () => {
         gapi.client
           .init({
@@ -24,7 +25,6 @@ function Basic() {
             scope: "",
           })
           .then(() => {
-            // Google API client initialized
             setGoogleApiInitialized(true);
           });
       });
@@ -33,59 +33,116 @@ function Basic() {
     document.body.appendChild(script);
 
     return () => {
-      // Cleanup: remove the dynamically added script when the component unmounts
       document.body.removeChild(script);
     };
   }, []);
+
+  const handleLogin = () => {
+    navigate("/dashboard");
+  };
+
+  const handleLogout = () => {
+    const auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(() => {
+      setUser(null);
+      console.log("User signed out.");
+    });
+
+    navigate("/");
+  };
 
   const onSuccess = (res) => {
     if (googleApiInitialized) {
       const userProfile = res.profileObj;
       console.log("LOGIN SUCCESS! Current user:", userProfile);
-
-      // Set the user state to store user details
       setUser(userProfile);
+      handleLogin();
     } else {
       console.log("Google API client is not initialized yet.");
-      // You may want to handle this scenario appropriately (e.g., show a loading indicator).
     }
   };
 
   const onFailure = (error) => {
     if (error.error === "popup_closed_by_user") {
       console.log("User closed the login popup.");
-      // Add code to handle this scenario (e.g., show a message to the user).
     } else {
       console.log("LOGIN FAILED! Error:", error);
-      // Handle other types of errors as needed.
     }
   };
 
   return (
-    <div>
-      {/* Display the user's username if signed in */}
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100vh", // Increase the center box height
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: "cover",
+      }}
+    >
+      <div
+        style={{
+          background: "rgba(255, 255, 255, 0.8)",
+          padding: "50px", // Adjust the padding
+          borderRadius: "10px",
+          boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
+          textAlign: "left",
+          maxWidth: "350px", // Adjust the maximum width
+          height: "500px", // Adjust the height
+          margin: "0 auto",
+        }}
+      >
+        <h3
+          style={{
+            fontFamily: "Canva Sans",
+            fontSize: "24px",
+            marginBottom: "10px",
+          }}
+        >
+          Login or sign up in seconds
+        </h3>
+        <h5
+          style={{
+            fontWeight: "normal",
+            marginBottom: "20px",
+            fontFamily: "Noto Sans Variable",
+            fontSize: "16px",
+          }}
+        >
+          Use your email to continue with SmartBase (its free)!
+        </h5>
 
-      {user ? (
-        <div>
-          <p>Welcome, {user.name}!</p>
-          {/* Add any other content you want to display for authenticated users */}
-        </div>
-      ) : (
-        // Display the Google login button if not signed in
         <GoogleLogin
           clientId={clientId}
-          buttonText="Sign in with Google LOREM IPSUM Sign in with Google"
+          buttonText="Sign in with Google"
           onSuccess={onSuccess}
           onFailure={onFailure}
           cookiePolicy={"single_host_origin"}
           isSignedIn={true}
         />
-      )}
-      <h1>Sign In</h1>
-      {/* Other sign-in content */}
-      <p>
-        Dont have an account? <Link to="/update-profile">Create one</Link>.
-      </p>
+        <h6
+          style={{
+            fontWeight: "normal",
+            marginTop: "30px",
+            fontFamily: "Noto Sans Variable",
+            fontSize: "13px",
+          }}
+        >
+          By continuing, you agree to SmartBase Terms of use. Read our privacy policy.
+        </h6>
+        {/* <h6
+          style={{
+            fontWeight: "normal",
+            marginBottom: "10px",
+            fontFamily: "Noto Sans Variable",
+            fontSize: "13px",
+          }}
+        >
+          Read our privacy policy.
+        </h6> */}
+      </div>
     </div>
   );
 }
