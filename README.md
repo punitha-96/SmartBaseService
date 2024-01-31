@@ -1,4 +1,4 @@
-# Sequelize Migration and Rate Limiter Project
+# Creation of RESTful API with Node.js, Express, and PostgreSQL.
 
 Basic Node.js and Express application that serves as an API interacting with a PostgreSQL database.
 
