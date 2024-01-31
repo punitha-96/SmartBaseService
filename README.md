@@ -64,7 +64,7 @@ The application will be accessible at http://localhost:your-port.
 
 2. **Database Migrations**
 
-   (i). Apply migrations with:
+   (i). Apply the migrations with:
 
 ```bash
         npx db-migrate up
