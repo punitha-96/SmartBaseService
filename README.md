@@ -37,6 +37,7 @@ git clone git@github.com:your-username/your-project.git
 cd your-project
 git checkout your-branch
 code .
+npm install
 ```
 
 2. **Edit database configuration:**
