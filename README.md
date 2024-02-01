@@ -52,7 +52,7 @@ quit
 
 ### Starting the Server
 
-To start the server with rate limiting:
+To start the server:
 
 ```bash
 brew services start postgresql
