@@ -7,15 +7,15 @@ const pool = new Pool({
   port: 5432,
 });
 const {
-  SELECT_SPECIFIC_COLUMNS,
-  SELECT_ROW_BY_ID,
-  INSERT_ROW,
-  UPDATE_ROW_BY_ID,
-  DELETE_ROW_BY_ID,
+  FETCH_USERS_DETAIL,
+  FETCH_USER,
+  INSERT_USER,
+  UPDATE_USER_BY_ID,
+  DELETE_USER_BY_ID,
 } = require("./queryconstants");
 
 const getUsers = (request, response) => {
-  pool.query(SELECT_SPECIFIC_COLUMNS, (error, results) => {
+  pool.query(FETCH_USERS_DETAIL, (error, results) => {
     if (error) {
       throw error;
     }
@@ -26,7 +26,7 @@ const getUsers = (request, response) => {
 const getUserById = (request, response) => {
   const id = parseInt(request.params.id);
 
-  pool.query(SELECT_ROW_BY_ID, [id], (error, results) => {
+  pool.query(FETCH_USER, [id], (error, results) => {
     if (error) {
       throw error;
     }
@@ -37,7 +37,7 @@ const getUserById = (request, response) => {
 const createUser = (request, response) => {
   const { name, email } = request.body;
 
-  pool.query(INSERT_ROW, [name, email], (error, results) => {
+  pool.query(INSERT_USER, [name, email], (error, results) => {
     if (error) {
       throw error;
     }
@@ -51,7 +51,7 @@ const updateUser = (request, response) => {
   const id = parseInt(request.params.id);
   const { name, email } = request.body;
 
-  pool.query(UPDATE_ROW_BY_ID, [name, email, id], (error, results) => {
+  pool.query(UPDATE_USER_BY_ID, [name, email, id], (error, results) => {
     if (error) {
       throw error;
     }
@@ -62,7 +62,7 @@ const updateUser = (request, response) => {
 const deleteUser = (request, response) => {
   const id = parseInt(request.params.id);
 
-  pool.query(DELETE_ROW_BY_ID, [id], (error, results) => {
+  pool.query(DELETE_USER_BY_ID, [id], (error, results) => {
     if (error) {
       throw error;
     }
