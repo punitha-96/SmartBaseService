@@ -4,6 +4,7 @@
     "user": "me",
     "password": "password",
     "host": "localhost",
-    "database": "api"
+    "database": "api",
+    "port": 5432
   }
 }

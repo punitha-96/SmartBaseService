@@ -1,11 +1,7 @@
+const databaseConfig = require("./database.json").dev; // Assuming your config is in dev environment
 const Pool = require("pg").Pool;
-const pool = new Pool({
-  user: "me",
-  host: "localhost",
-  database: "api",
-  password: "password",
-  port: 5432,
-});
+const pool = new Pool(databaseConfig);
+
 const {
   SELECT_SPECIFIC_COLUMNS,
   SELECT_ROW_BY_ID,

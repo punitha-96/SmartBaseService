@@ -37,7 +37,7 @@ GRANT ALL PRIVILEGES ON DATABASE your-database TO your-username;
 quit
 ```
 
-Open database.json and replace the credentials with your own.
+Configure your PostgreSQL credentials in database.json file. Copy the contents of database-template.md file provided in the documentation and create your own database.json file with your specific configurations.
 
 ```bash
 {
