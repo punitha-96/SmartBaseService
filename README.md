@@ -57,7 +57,7 @@ quit
 
 ### Starting the Server
 
-In iterm2, start the postgresql server :
+In iterm2, Start the postgresql server :
 
 ```bash
 brew services start postgresql
