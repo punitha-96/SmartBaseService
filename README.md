@@ -64,16 +64,16 @@ The application will be accessible at http://localhost:your-port.
 
 2. **Database Migrations**
 
-   (i). Apply the migrations with:
-
-```bash
-        npx db-migrate up
-```
-
-(ii).Rollback migrations with:
+   (i). Rollback the migrations with:
 
 ```bash
         npx db-migrate down
+```
+
+(ii).Apply the migrations with:
+
+```bash
+        npx db-migrate up
 ```
 
 You can verify the data in the database by following the steps outlined below:

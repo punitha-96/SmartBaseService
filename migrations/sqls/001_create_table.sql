@@ -1,5 +1,5 @@
 -- 001_create_table.sql
-CREATE TABLE example (
+CREATE TABLE IF NOT EXISTS example (
   id SERIAL PRIMARY KEY,
   name VARCHAR(50) NOT NULL
 );
