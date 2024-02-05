@@ -23,10 +23,13 @@ Before you begin, ensure you have the following installed:
 - [git](https://git-scm.com/download/mac)
 - [brew](https://brew.sh/)
 - [postman](https://www.postman.com/downloads/)
+- [iterm2](https://iterm2.com/)
 
 ## Usage
 
 To get started with the project, follow these steps:
+
+In vscode,
 
 1. **Clone the repository:**
 
@@ -36,6 +39,8 @@ cd your-project
 code .
 npm install
 ```
+
+In iterm2,
 
 2. **Edit database configuration:**
 
@@ -52,10 +57,15 @@ quit
 
 ### Starting the Server
 
-To start the server:
+In iterm2, start the postgresql server :
 
 ```bash
 brew services start postgresql
+```
+
+In vscode, start the web server :
+
+```bash
 node index.js
 ```
 
