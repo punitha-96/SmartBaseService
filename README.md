@@ -53,30 +53,37 @@ Open database.json and replace the credentials with your own.
 
 ## Run Locally
 
-1. **Start the server**
+### Starting the Server
+
+In iterm2, start the postgresql server :
 
 ```bash
-    brew services start postgresql
-    npm start
+brew services start postgresql
 ```
 
-The application will be accessible at http://localhost:your-port.
+In vscode, start the web server :
+
+```bash
+node index.js
+```
+
+The server will run on http://localhost:your-port.
 
 2. **Database Migrations**
 
-   (i). Rollback the migrations with:
+   (i). In vscode, Rollback the migrations with:
 
 ```bash
         npx db-migrate down
 ```
 
-(ii).Apply the migrations with:
+(ii).In vscode, Apply the migrations with:
 
 ```bash
         npx db-migrate up
 ```
 
-You can verify the data in the database by following the steps outlined below:
+You can verify the data in the database by following the steps outlined below: in iterm2,
 
 ```bash
 psql -d your-database -U your-username
