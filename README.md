@@ -89,7 +89,7 @@ This will execute the _up_ function in the pending migration files, making the c
         npx sequelize-cli db:migrate:undo
 ```
 
-This command will execute the _down_ function in the most recently applied migration, reverting the changes made by that migration.
+This command will execute the _down_ function in most recently applied migration, reverting the changes made by that migration.
 
 (iii).In vscode, Rollback all migrations with:
 
