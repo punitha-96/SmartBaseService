@@ -30,15 +30,18 @@ Before you begin, ensure you have the following installed:
 
 To get started with the project, follow these steps:
 
+In vscode,
+
 1. **Clone the repository:**
 
 ```bash
 git clone git@github.com:your-username/your-project.git
 cd your-project
-git checkout your-branch
 code .
 npm install
 ```
+
+In iterm2,
 
 2. **Edit database configuration:**
 
@@ -59,10 +62,17 @@ Copy the contents of _.env-template.md_ file provided in the documentation and c
 
 ## Run Locally
 
-1. To automatically generate new migration files:
+### Starting the Server
+
+In iterm2, start the postgresql server :
 
 ```bash
 brew services start postgresql
+```
+
+In vscode, To automatically generate new migration files:
+
+```bash
 node generateMigrations.js number_of_files
 ```
 
@@ -70,7 +80,7 @@ This generates _number_of_files_ migration files in the migrations folder.
 
 2. **Database Migrations**
 
-   (i). Apply migrations with:
+   (i). In vscode, Apply migrations with:
 
 ```bash
         npx sequelize-cli db:migrate
@@ -78,7 +88,7 @@ This generates _number_of_files_ migration files in the migrations folder.
 
 This will execute the _up_ function in the pending migration files, making the corresponding changes to your database schema.
 
-(ii).Rollback recent migration with:
+(ii).In vscode, Rollback recent migration with:
 
 ```bash
         npx sequelize-cli db:migrate:undo
@@ -86,7 +96,7 @@ This will execute the _up_ function in the pending migration files, making the c
 
 This command will execute the _down_ function in the most recently applied migration, reverting the changes made by that migration.
 
-(iii).Rollback all migrations with:
+(iii).In vscode, Rollback all migrations with:
 
 ```bash
         npx sequelize-cli db:migrate:undo:all
@@ -94,7 +104,7 @@ This command will execute the _down_ function in the most recently applied migra
 
 This command will execute the _down_ function for each previously applied migration in reverse order, effectively undoing all the migrations.
 
-You can then verify the data in the database by following the steps outlined below:
+In iterm2, You can then verify the data in the database by following the steps outlined below:
 
 ```bash
 psql -d your-database -U your-username
@@ -107,7 +117,7 @@ brew services stop postgresql
 
 ### Starting the Server
 
-To start the server with rate limiting:
+In vscode, To start the server with rate limiting:
 
 ```bash
 node index.js
