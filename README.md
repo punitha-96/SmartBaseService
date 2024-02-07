@@ -1,4 +1,4 @@
-# Sequelize Migration and Rate Limiter Project
+# Rate Limiter
 
 It describes rate limiting middleware using `express-rate-limit`.
 
