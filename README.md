@@ -65,10 +65,10 @@ Configure your PostgreSQL credentials in _.env_ file. Copy the contents of _.env
 brew services start postgresql
 ```
 
-2. To automatically generate new migration files:
+2. In vscode, To automatically generate new migration files:
 
 ```bash
-node generateMigrations.js number_of_files
+node generateMigrations.js number-of-files
 ```
 
 This generates _number_of_files_ migration files in the migrations folder.
@@ -83,7 +83,7 @@ This generates _number_of_files_ migration files in the migrations folder.
 
 This will execute the _up_ function in the pending migration files, making the corresponding changes to your database schema.
 
-(ii).In vscode,Rollback recent migration with:
+(ii).In vscode, Rollback recent migration with:
 
 ```bash
         npx sequelize-cli db:migrate:undo
