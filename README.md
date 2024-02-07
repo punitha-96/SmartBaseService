@@ -53,6 +53,8 @@ GRANT ALL PRIVILEGES ON DATABASE your-database TO your-username;
 quit
 ```
 
+Configure your PostgreSQL credentials in .env file. Copy the contents of env-template.md file provided in the documentation and create your own .env file with your specific configurations.
+
 ## Run Locally
 
 ### Starting the Server
@@ -66,7 +68,7 @@ brew services start postgresql
 In vscode, start the web server :
 
 ```bash
-node index.js
+npm start
 ```
 
 The server will run on http://localhost:your-port.
