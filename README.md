@@ -64,10 +64,13 @@ Before you begin, ensure you have the following installed:
 - [git](https://git-scm.com/download/mac)
 - [brew](https://brew.sh/)
 - [postman](https://www.postman.com/downloads/)
+- [iterm2](https://iterm2.com/)
 
 ## Usage
 
 To get started with the project, follow these steps:
+
+In vscode,
 
 1. **Clone the repository:**
 
@@ -77,6 +80,8 @@ cd your-project
 code .
 npm install
 ```
+
+In iterm2,
 
 2. **Edit database configuration:**
 
@@ -104,16 +109,22 @@ To run this project, you will need to add the following environment variables to
 `WHITELISTED_IP's`
 
 `BLACKLISTED_IP's`
+Configure your PostgreSQL credentials in .env file. Copy the contents of env-template.md file provided in the documentation and create your own .env file with your specific configurations.
 
 ## Run Locally
 
 ### Starting the Server
 
-To start the server:
+In iterm2, Start the postgresql server :
 
 ```bash
 brew services start postgresql
-node index.js
+```
+
+In vscode, start the web server :
+
+```bash
+npm start
 ```
 
 The server will run on http://localhost:your-port.
