@@ -34,6 +34,7 @@ In iterm2,
 2. **Edit database configuration:**
 
 ```bash
+brew install postgresql
 sudo -i -u postgres
 createuser --interactive --pwprompt your-username
 createdb -O your-username your-database
