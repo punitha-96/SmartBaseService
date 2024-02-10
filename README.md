@@ -31,7 +31,7 @@ npm install
 
 In iterm2,
 
-2. **Edit database configuration:**
+2. **Edit database configuration :**
 
 ```bash
 brew install postgresql
