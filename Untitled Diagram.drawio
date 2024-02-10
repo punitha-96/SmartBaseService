@@ -1,1 +1,37 @@
-<mxfile host="app.diagrams.net" modified="2024-02-10T15:12:53.798Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" version="14.7.7" etag="FCB1pcd0ZZILd-Bf-zK3" type="github"><diagram id="_6E5SFUNp13_1lbPCXd5">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2024-02-10T15:41:21.149Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="ieSOHJnsKOb4WauNV9qc" version="14.7.7" type="github">
+  <diagram id="_6E5SFUNp13_1lbPCXd5" name="Page-1">
+    <mxGraphModel dx="1186" dy="735" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="XxvOM3QrDQvfWkw7IDQI-2" value="Smart Base Service" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="XxvOM3QrDQvfWkw7IDQI-4" value="Authentication&lt;br&gt;Authorization&lt;br&gt;First level logging&lt;br&gt;Session maintance" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="210" width="150" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="XxvOM3QrDQvfWkw7IDQI-5" value="Zaps" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="XxvOM3QrDQvfWkw7IDQI-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="XxvOM3QrDQvfWkw7IDQI-6" target="XxvOM3QrDQvfWkw7IDQI-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XxvOM3QrDQvfWkw7IDQI-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="XxvOM3QrDQvfWkw7IDQI-6" target="XxvOM3QrDQvfWkw7IDQI-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XxvOM3QrDQvfWkw7IDQI-6" value="Zaps Service" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="210" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="XxvOM3QrDQvfWkw7IDQI-8" value="Valid user" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="360" y="250" width="70" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="XxvOM3QrDQvfWkw7IDQI-9" value="save in session&lt;br&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="560" y="140" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="XxvOM3QrDQvfWkw7IDQI-11" value="&lt;br&gt;React&lt;br&gt;Redux&lt;br&gt;Mongo&lt;br&gt;Express&lt;br&gt;Node&lt;br&gt;Event Queue" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="530" y="270" width="120" height="150" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
