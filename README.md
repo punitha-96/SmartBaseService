@@ -2,16 +2,57 @@
 
 Basic Node.js and Express application that serves as an API interacting with a PostgreSQL database.
 
-## API Endpoints
+## API Reference
 
-```bash
-GET /: Description of the root endpoint.
-GET /users: Get a list of all users.
-GET /users/:id: Get details of a specific user.
-POST /users: Create a new user.
-PUT /users/:id: Update a user.
-DELETE /users/:id: Delete a user.
+#### Get all users
+
+```http
+  GET /v1/users
 ```
+
+| Parameter | Type     | Description                      |
+| :-------- | :------- | :------------------------------- |
+| `api_key` | `string` | **Required**. Your API key (TBD) |
+
+#### Get user
+
+```http
+  GET /v1/user/${id}
+```
+
+| Parameter | Type     | Description                            |
+| :-------- | :------- | :------------------------------------- |
+| `id`      | `string` | **Required**. Id of item to fetch(TBD) |
+
+#### Crete user
+
+```http
+  POST /v1/users
+```
+
+| Parameter | Type     | Description                            |
+| :-------- | :------- | :------------------------------------- |
+| `id`      | `string` | **Required**. Id of item to fetch(TBD) |
+
+#### Update user
+
+```http
+  PATCH /v1/users/${id}
+```
+
+| Parameter | Type     | Description                            |
+| :-------- | :------- | :------------------------------------- |
+| `id`      | `string` | **Required**. Id of item to fetch(TBD) |
+
+#### Delete user
+
+```http
+  DELETE /v1/users/${id}
+```
+
+| Parameter | Type     | Description                            |
+| :-------- | :------- | :------------------------------------- |
+| `id`      | `string` | **Required**. Id of item to fetch(TBD) |
 
 ## Installation
 
@@ -53,6 +94,21 @@ GRANT ALL PRIVILEGES ON DATABASE your-database TO your-username;
 quit
 ```
 
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`DB_USERNAME`
+
+`DB_PASSWORD`
+
+`DB_PORT`
+
+`API_RATE_LIMIT`
+
+`WHITELISTED_IP's`
+
+`BLACKLISTED_IP's`
 Configure your PostgreSQL credentials in .env file. Copy the contents of env-template.md file provided in the documentation and create your own .env file with your specific configurations.
 
 ## Run Locally
